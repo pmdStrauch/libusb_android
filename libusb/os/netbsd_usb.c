@@ -114,6 +114,9 @@ const struct usbi_os_backend netbsd_backend = {
 	NULL,				/* alloc_streams */
 	NULL,				/* free_streams */
 
+	NULL,				/* dev_mem_alloc() */
+	NULL,				/* dev_mem_free() */
+
 	NULL,				/* kernel_driver_active() */
 	NULL,				/* detach_kernel_driver() */
 	NULL,				/* attach_kernel_driver() */
@@ -131,7 +134,6 @@ const struct usbi_os_backend netbsd_backend = {
 	sizeof(struct device_priv),
 	sizeof(struct handle_priv),
 	0,				/* transfer_priv_size */
-	0,				/* add_iso_packet_size */
 };
 
 int
